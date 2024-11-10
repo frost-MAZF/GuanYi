@@ -1120,6 +1120,28 @@
       </tags>
   </entry>
   <entry>
+    <title>Android上的编译器</title>
+    <url>/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Android/Android%E4%B8%8A%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h1 id="C语言编译器"><a href="#C语言编译器" class="headerlink" title="C语言编译器"></a>C语言编译器</h1><p>一共有三个,这里推荐的是第三个,虽然上手难度相比较要难一丢丢,但是非常的好用.第一个是最简单的,但是相对应的,有广告,并且功能比较少.第二个中规中矩吧.<br><br><a class="link"   href="https://apkpure.com/cn/cyu-yan-bian-yi-qi/coding.yu.ccompiler.new"  target="_blank" >C语言编译器-旗鱼 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><br><a class="link"   href="https://indragon.lanzoub.com/iqeuc1an3ule" >C4droid <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><br><a class="link"   href="https://wwsd.lanzoue.com/iYQIw194pulg"  download>Cxxdroid <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br></p>
+<h1 id="C语言编译器-旗鱼的编译器使用教程"><a href="#C语言编译器-旗鱼的编译器使用教程" class="headerlink" title="C语言编译器-旗鱼的编译器使用教程"></a>C语言编译器-旗鱼的编译器使用教程</h1><p>这里就先用最简单的来做演示,请先<a class="link"   href="https://apkpure.com/cn/cyu-yan-bian-yi-qi/coding.yu.ccompiler.new"  target="_blank">点击链接 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>进行下载安装.<br><br>然后我们进入软件的时候可能会跳一个广告出来,点击跳过就好了.<br><br>进去以后的界面是这样的<figure class="image-caption"><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://ooo.0x0.ooo/2024/08/05/Ot5NjM.jpg"
+                      width="450" height="800" alt="这是一个主界面图片"
+                ><figcaption>这是一个主界面图片</figcaption></figure><br><br>可以看到已经替你写好了一段非常简单的输出<samp>Hello world!</samp>的代码,我们直接点击上方的运行,就可以看到输出的<samp>Hello world!</samp>了.<br><br>不想看了就直接返回就好了,接着我们点击菜单,可以看到功能非常的少啊<br><br><figure class="image-caption"><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://ooo.0x0.ooo/2024/08/05/Ot5Ay1.jpg"
+                      width="450" height="800" alt="这是一个菜单界面"
+                ><figcaption>这是一个菜单界面</figcaption></figure><br><br>我们点击另存为,另存为的意思大概等于保存文件吧!点击以后会弹出一个界面,上面的一串数字可以随意更改,要注意的是<smap>.c</smap>这个后缀不要删掉就可以了.下面的Download&#x2F;CCompiler&#x2F;xxxx.c的意思是你这个文件被保存到了**Download&#x2F;CCompiler&#x2F;**这个目录下,我们打开系统自带的文件管理器,找到Download,有的手机会把Download的英文翻译为中文的下载,如果没有找到Download这个文件夹,就找一下写着下载的文件夹,如果两个都没找到,只能说明你眼瞎.<br><br>随后我们回到C语言编译器,点击菜单,点击打开,找到你刚才保存文件的目录,点击你想要打开的C语言文件,要注意的是如果点击打开后,你现在写的代码没有点击另存为的话,是会被覆盖消失的.<br><br>那么至此,最简单的编译器教程已经结束,接下来是稍难些许的教程.如果不需要的话,可以直接看一些入门视频,书籍什么的了,或者跳转到<a href="/学习/编程/语言/高级语言/C语言/C语言基础知识/C语言入门/">C语言入门</a>这篇文章<br></p>
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>环境配置</category>
+        <category>Android</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Git on Android</title>
     <url>/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Android/Git%20on%20Andoird/</url>
     <content><![CDATA[<p>本文参考以下文章:</p>
@@ -1164,9 +1186,9 @@
                 ><figcaption>TermuxGit</figcaption></figure><br>从ssh-rra AAAAB3NzaC1开始到结尾,全都要复制.复制出来的内容是这样的:<br><br>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC5Lh7rLEncm2966k6Flbsf&#x2F;PZva0vK+zUJmiEY&#x2F;GlGwy8JXeynpJER7ZZ30E0Yp3EKtG5YjHaefVr9QtgY7v0yW+&#x2F;vP18mjQMUje66Vo9&#x2F;onEcDU5nhzKxbORcH025bpKfeDK4gz7lP6okuqLsH4utmzbswoAXyKqX+kIaZfPMzvEbj&#x2F;NNEz8WwuR6iIydiwX+qix7FEuntBmU19g5Cbsa542h3xpnJu3BMGMGSwZqsCo50Budkx1H+in4HIWvdFwqsSzGjBejFNm3LvYeZ9rRNyNvXNm7WJWG0kpacI9R9OE752lbz96rvIHqsQvyS9+VqNaQ+n3hQp82vSahnbkf2jZ2AdE1f5ujqdt4TJKTRyUiQ0c1mhTnWLGe2kIVFdSRFodiL78V8O3XYs7&#x2F;BN8T5qbmYASDsed5IB4it8Q0Azn1Ua65dgL1aT3e4kRccxG0hvP+T5KC0mQpoQjerWXbOui+yQRuLCafi3Et0z2lrAz&#x2F;sn9YU1GZyD9NhJivxNk&#x3D; u0_a243@localhost<br><br><br>然后还是打开Gitee,进入设置,点击SSH公钥,将刚才复制的内容粘贴,就好了<br><br>然后是克隆仓库到本地,或者是在本地新建一个仓库.<br></p>
 <h2 id="克隆"><a href="#克隆" class="headerlink" title="克隆"></a>克隆</h2><p>如果你想克隆一个仓库,那么就去你的gitee,或者github或者别的,上面会有提示.比如说我的<br><br>先在Termux输入下面这一串</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &#x27;关轶&#x27; </span><br><span class="line">git config --global user.email &#x27;13339651+guan_yi@user.noreply.gitee.com&#x27;</span><br></pre></td></tr></table></figure></div>
-<p>其中<strong>关轶</strong>是你的用户名,而<strong><a class="link"   href="mailto:&#49;&#51;&#x33;&#51;&#x39;&#54;&#x35;&#49;&#43;&#103;&#117;&#x61;&#x6e;&#x5f;&#x79;&#105;&#x40;&#x75;&#115;&#101;&#x72;&#x2e;&#110;&#x6f;&#114;&#101;&#112;&#x6c;&#121;&#x2e;&#x67;&#x69;&#116;&#101;&#x65;&#46;&#99;&#x6f;&#109;" >&#49;&#51;&#x33;&#51;&#x39;&#54;&#x35;&#49;&#43;&#103;&#117;&#x61;&#x6e;&#x5f;&#x79;&#105;&#x40;&#x75;&#115;&#101;&#x72;&#x2e;&#110;&#x6f;&#114;&#101;&#112;&#x6c;&#121;&#x2e;&#x67;&#x69;&#116;&#101;&#x65;&#46;&#99;&#x6f;&#109; <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></strong>则是你的邮箱.<br><br>然后克隆至本地,cd到你想要克隆的位置,然后输入下面这一串</p>
+<p>其中<strong>关轶</strong>是你的用户名,而<strong><a class="link"   href="mailto:&#49;&#51;&#x33;&#51;&#x39;&#x36;&#x35;&#x31;&#43;&#103;&#117;&#97;&#x6e;&#x5f;&#121;&#x69;&#64;&#117;&#x73;&#x65;&#114;&#x2e;&#x6e;&#111;&#114;&#x65;&#112;&#108;&#121;&#x2e;&#x67;&#105;&#x74;&#x65;&#101;&#x2e;&#99;&#x6f;&#109;" >&#49;&#51;&#x33;&#51;&#x39;&#x36;&#x35;&#x31;&#43;&#103;&#117;&#97;&#x6e;&#x5f;&#121;&#x69;&#64;&#117;&#x73;&#x65;&#114;&#x2e;&#x6e;&#111;&#114;&#x65;&#112;&#108;&#121;&#x2e;&#x67;&#105;&#x74;&#x65;&#101;&#x2e;&#99;&#x6f;&#109; <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></strong>则是你的邮箱.<br><br>然后克隆至本地,cd到你想要克隆的位置,然后输入下面这一串</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@gitee.com:Guan_Yi/NineHeaven.git</span><br></pre></td></tr></table></figure></div>
-<p>clone 后面的<strong><a class="link"   href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#101;&#x65;&#46;&#x63;&#111;&#109;" >&#103;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#101;&#x65;&#46;&#x63;&#111;&#109; <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>:Guan_Yi&#x2F;NineHeaven.git</strong>是你的仓库地址.最后克隆成功后会是这样的:<br><figure class="image-caption"><img  
+<p>clone 后面的<strong><a class="link"   href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#101;&#x65;&#46;&#x63;&#111;&#109;" >&#103;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#101;&#x65;&#46;&#x63;&#111;&#109; <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>:Guan_Yi&#x2F;NineHeaven.git</strong>是你的仓库地址.最后克隆成功后会是这样的:<br><figure class="image-caption"><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://ooo.0x0.ooo/2024/04/13/Omsz56.jpg"
@@ -1665,45 +1687,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Android上的编译器</title>
-    <url>/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Android/Android%E4%B8%8A%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8/</url>
-    <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h1 id="C语言编译器"><a href="#C语言编译器" class="headerlink" title="C语言编译器"></a>C语言编译器</h1><p>一共有三个,这里推荐的是第三个,虽然上手难度相比较要难一丢丢,但是非常的好用.第一个是最简单的,但是相对应的,有广告,并且功能比较少.第二个中规中矩吧.<br><br><a class="link"   href="https://apkpure.com/cn/cyu-yan-bian-yi-qi/coding.yu.ccompiler.new"  target="_blank" >C语言编译器-旗鱼 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><br><a class="link"   href="https://indragon.lanzoub.com/iqeuc1an3ule" >C4droid <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><br><a class="link"   href="https://wwsd.lanzoue.com/iYQIw194pulg"  download>Cxxdroid <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br></p>
-<h1 id="C语言编译器-旗鱼的编译器使用教程"><a href="#C语言编译器-旗鱼的编译器使用教程" class="headerlink" title="C语言编译器-旗鱼的编译器使用教程"></a>C语言编译器-旗鱼的编译器使用教程</h1><p>这里就先用最简单的来做演示,请先<a class="link"   href="https://apkpure.com/cn/cyu-yan-bian-yi-qi/coding.yu.ccompiler.new"  target="_blank">点击链接 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>进行下载安装.<br><br>然后我们进入软件的时候可能会跳一个广告出来,点击跳过就好了.<br><br>进去以后的界面是这样的<figure class="image-caption"><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://ooo.0x0.ooo/2024/08/05/Ot5NjM.jpg"
-                      width="450" height="800" alt="这是一个主界面图片"
-                ><figcaption>这是一个主界面图片</figcaption></figure><br><br>可以看到已经替你写好了一段非常简单的输出<samp>Hello world!</samp>的代码,我们直接点击上方的运行,就可以看到输出的<samp>Hello world!</samp>了.<br><br>不想看了就直接返回就好了,接着我们点击菜单,可以看到功能非常的少啊<br><br><figure class="image-caption"><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://ooo.0x0.ooo/2024/08/05/Ot5Ay1.jpg"
-                      width="450" height="800" alt="这是一个菜单界面"
-                ><figcaption>这是一个菜单界面</figcaption></figure><br><br>我们点击另存为,另存为的意思大概等于保存文件吧!点击以后会弹出一个界面,上面的一串数字可以随意更改,要注意的是<smap>.c</smap>这个后缀不要删掉就可以了.下面的Download&#x2F;CCompiler&#x2F;xxxx.c的意思是你这个文件被保存到了**Download&#x2F;CCompiler&#x2F;**这个目录下,我们打开系统自带的文件管理器,找到Download,有的手机会把Download的英文翻译为中文的下载,如果没有找到Download这个文件夹,就找一下写着下载的文件夹,如果两个都没找到,只能说明你眼瞎.<br><br>随后我们回到C语言编译器,点击菜单,点击打开,找到你刚才保存文件的目录,点击你想要打开的C语言文件,要注意的是如果点击打开后,你现在写的代码没有点击另存为的话,是会被覆盖消失的.<br><br>那么至此,最简单的编译器教程已经结束,接下来是稍难些许的教程.如果不需要的话,可以直接看一些入门视频,书籍什么的了,或者跳转到<a href="/学习/编程/语言/高级语言/C语言/C语言基础知识/C语言入门/">C语言入门</a>这篇文章<br></p>
-]]></content>
-      <categories>
-        <category>编程</category>
-        <category>环境配置</category>
-        <category>Android</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>HTML入门</title>
-    <url>/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80/HTML/HTML%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<h2 id="本文参考以下文章"><a href="#本文参考以下文章" class="headerlink" title="本文参考以下文章:"></a>本文参考以下文章:</h2><h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>- </p>
-<h2 id="第一个HTML代码"><a href="#第一个HTML代码" class="headerlink" title="第一个HTML代码"></a>第一个HTML代码</h2><pre><code>
-</code></pre>
-]]></content>
-      <categories>
-        <category>编程</category>
-        <category>语言</category>
-        <category>HTML</category>
-      </categories>
-      <tags>
-        <tag>基础教程</tag>
-        <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaScript入门</title>
     <url>/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80/JavaScript/JS%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<p>本文参考以下文章:</p>
@@ -1776,6 +1759,23 @@
       <tags>
         <tag>基础教程</tag>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML入门</title>
+    <url>/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80/HTML/HTML%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<h2 id="本文参考以下文章"><a href="#本文参考以下文章" class="headerlink" title="本文参考以下文章:"></a>本文参考以下文章:</h2><h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>- </p>
+<h2 id="第一个HTML代码"><a href="#第一个HTML代码" class="headerlink" title="第一个HTML代码"></a>第一个HTML代码</h2><pre><code>
+</code></pre>
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>语言</category>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>基础教程</tag>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
