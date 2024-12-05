@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://ooo.0x0.ooo/2024/02/14/Ov8ayp.jpg">
 <meta property="og:image" content="https://ooo.0x0.ooo/2024/02/14/Ov8osU.jpg">
 <meta property="article:published_time" content="2024-02-13T12:21:12.000Z">
-<meta property="article:modified_time" content="2024-11-16T05:47:34.058Z">
+<meta property="article:modified_time" content="2024-11-18T00:46:13.556Z">
 <meta property="article:author" content="关轶">
 <meta property="article:tag" content="Termux">
 <meta property="article:tag" content="Android">
@@ -671,15 +671,15 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">16</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">17</div>
         <div class="label text-third-text-color text-sm">标签</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">27</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">28</div>
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">20</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">21</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -733,8 +733,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-11-16 13:47:34</span>
-            <span class="mobile">2024-11-16 13:47:34</span>
+            <span class="desktop">2024-11-18 08:46:13</span>
+            <span class="mobile">2024-11-18 08:46:13</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -790,12 +790,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.8k 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>6 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>7 分钟</span>
         </span>
     
     
@@ -1000,19 +1000,18 @@
 <ul>
 <li><a class="link"   target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2019/09/curl-reference.html" >curl用法指南 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
 </ul>
-<h1 id="桌面环境配置"><a href="#桌面环境配置" class="headerlink" title="桌面环境配置"></a>桌面环境配置</h1><address>参考<a href = "https://ivonblog.com/posts/termux-desktop-environment/">Termux安装图形桌面环境＋音讯输出教学</a></address>
-有的时候我们不单单需要终端环境，某些时候也需要桌面环境，例如当我们要看视频的时候,或者装逼的时候.**桌面环境不是必须的,选择安装**<br>
+<h1 id="桌面环境配置"><a href="#桌面环境配置" class="headerlink" title="桌面环境配置"></a>桌面环境配置</h1><address>参考<a href = "https://ivonblog.com/posts/termux-desktop-environment/">Termux安装图形桌面环境＋音讯输出教学</a></address><br />
+或者也可以查看官方文档<a href = "https://wiki.termux.com/wiki/Graphical_Environment#Desktop_environment">Graphical Environment</a><br />
 
-
-
-<h1 id="编译环境配置"><a href="#编译环境配置" class="headerlink" title="编译环境配置"></a>编译环境配置</h1><blockquote>
-<ul>
-<li>在安装完成基础的环境配置之后，可以参考下面的文章进行更进一步的进阶操作。<br></li>
-</ul>
-<blockquote>
-<p><a href="/学习/编程/环境配置/Linux/Linux 编译环境配置/" target="_blank">Linux编译环境配置</a></p>
-</blockquote>
-</blockquote>
+<p>有的时候我们不单单需要终端环境，某些时候也需要桌面环境，例如当我们要看视频的时候,或者装逼的时候.所以说桌面环境实际上在手机上不是必须的. <br /></p>
+<p>如果你在输入下面这个命令的时候出现了<strong>Unable to locate package</strong>的情况,可以尝试更换一下清华源.</p>
+<p>记得安装x11</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install x11-repo</span><br><span class="line">pkg install termux-x11-nightly</span><br></pre></td></tr></table></figure></div>
+<p>如果运行脚本的时候提示需要重新安装x11,那应该是你的x11有问题,比如说我是从ZeroTermux里直接安装的,就不行,需要去官网的releases下载<a href = "https://github.com/termux/termux-x11/releases">GitHub Releases</a><br /></p>
+<h1 id="编译环境配置"><a href="#编译环境配置" class="headerlink" title="编译环境配置"></a>编译环境配置</h1><p>在安装完成基础的环境配置之后，可以参考下面的文章进行更进一步的进阶操作。<br><br><a href="/学习/编程/环境配置/Linux/Linux 编译环境配置/" target="_blank">Linux编译环境配置</a></p>
+<h1 id="Mobox"><a href="#Mobox" class="headerlink" title="Mobox"></a>Mobox</h1><p>参考<a href = "https://ivonblog.com/posts/termux-mobox/">Android手机玩Steam上的Windows游戏 ～ Mobox模擬器使用教学</a><br /></p>
+<p>在更换中文字体的时候就按照<a href = "https://github.com/olegos2/mobox/issues/362">Mobox Iessues</a>里的操作来就可以设置成简体中文了.<br /></p>
+<p>在运行steam的时候termux可能会闪退,我也不清楚为什么，设备是MIx2S，系统版本是Android14。</p>
 
         </div>
 
@@ -1027,7 +1026,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-11-16 13:47:34
+                    :</strong> 2024-11-18 08:46:13
             </li>
         
         <li>
@@ -1170,7 +1169,7 @@
     <div class="post-toc">
         <div class="toc-title">目录</div>
         <div class="page-title">Linux on Android 的环境配置</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%88%E7%AB%AF%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-text">终端环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text">前置准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="nav-text">基础配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%A2%E6%BA%90"><span class="nav-text">换源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Termux%E7%BE%8E%E5%8C%96"><span class="nav-text">Termux美化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Termux%E5%88%86%E5%8C%BA"><span class="nav-text">Termux分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-text">命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-text">桌面环境配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-text">编译环境配置</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%88%E7%AB%AF%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-text">终端环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text">前置准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="nav-text">基础配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%A2%E6%BA%90"><span class="nav-text">换源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Termux%E7%BE%8E%E5%8C%96"><span class="nav-text">Termux美化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Termux%E5%88%86%E5%8C%BA"><span class="nav-text">Termux分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-text">命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-text">桌面环境配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-text">编译环境配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mobox"><span class="nav-text">Mobox</span></a></li></ol>
 
     </div>
 </div>
@@ -1205,11 +1204,11 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共撰写了 20 篇文章
+                        共撰写了 21 篇文章
                     </span>
                     
                         <span>
-                            共 43.7k 字
+                            共 47.3k 字
                         </span>
                     
                 </p>

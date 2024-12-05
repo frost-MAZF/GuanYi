@@ -123,7 +123,7 @@
 <p>“这还用猜？”阿金一脸的不屑，他就那么说着。“换我来开吧。”</p>
 <p>“算了。”</p>
 <p>过去几年，心悸通常包裹着我，也许是某年开始，变成了长久的跳动，余下的颤抖代替了它，时常我会忽略掉它，但某些时刻，也忘不掉它，那天，死去的那天。</p>
-<p>孤独是生命送的礼物，当有人问我为什么不找伴的时候，我经常这么和别人说，这是一首歌，好像是吧，我不是很喜欢听这首歌，但是歌词挺好的。我总是害怕孤独，害怕自己一个人，逐渐，我再也</p>
+<p>孤独是生命送的礼物，当有人问我为什么不找伴的时候，我经常这么和别人说，这是一首歌，好像是吧，我不是很喜欢听这首歌，但是歌词挺好的。我总是害怕孤独，害怕自己一个人.</p>
 <p>我听我心跳，在泵动的空窗里，听时间滴答，乌云暂停，等待着将我穿透，且得痛快，死亡来临。</p>
 <p><img  
                      lazyload
@@ -1189,134 +1189,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux in termux</title>
-    <url>/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Android/Kali%20Linux%20in%20termux/</url>
-    <content><![CDATA[<p>很多时候随身带一个电脑其实不是很方便,这时候我们就可以在一部安卓手机里安装一个Linux系统.<br /><br>首先安装一个Termux,具体的可以去看这篇文章<a class="link"   href="https://blog.guanyi.lol/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Android/Linux%20on%20Android%20%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" >Linux on Android 的环境配置 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>来进行安装<br /><br>安装好以后还需要一个VNC软件进行连接,这个就随便下载了,F-droid上面一大堆,<br /></p>
-<h1 id="Debian"><a href="#Debian" class="headerlink" title="Debian"></a>Debian</h1><address>参考wahase<a href = "https://github.com/wahasa/Debian"></a></address>
-
-<h1 id="Kali-Linux"><a href="#Kali-Linux" class="headerlink" title="Kali Linux"></a>Kali Linux</h1><p>Kali Linux有两种方法安装</p>
-<address>参考官方文档:<a class="link"   href="https://www.kali.org/get-kali/#kali-mobile" >Nethunter Install <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></address>
-
-<address>wahasa的脚本<a href = "https://github.com/wahasa/Kali-Nethunter">Kali Nethunter</a></address>
-
-<p>输入下面这一行命令来获取储存空间权限.<br /></p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">termux-setup-storage</span><br></pre></td></tr></table></figure></div>
-<p>接着输入下面这一行命令来安装wget.<br /></p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install wget</span><br></pre></td></tr></table></figure></div>
-<p>接着输入下面这一行命令来下载脚本.<br /></p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -O install-nethunter-termux https://offs.ec/2MceZWr</span><br></pre></td></tr></table></figure></div>
-<p>然后输入下面这行命令来给脚本文件权限.<br /></p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod +x install-nethunter-termux</span><br></pre></td></tr></table></figure></div>
-<p>最后输入下面这一行命令来运行脚本.<br /></p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">./install-nethunter-termux</span><br></pre></td></tr></table></figure></div>
-<p>接着可以看到一个KALI的logo和三个选项,写有<strong>full</strong>的是完整版的,写有<strong>minimal</strong>是最小版本,至于第三个nano我现在还没搞明白是啥意思,第一次遇见,所以我就安装完整的了,输入1以后回车,就会自动下载所需要的东西了.<br /><br>如果你第一次安装完成以后没有显示一个KALI的logo,那就重新运行一遍脚本,然后一路n下去,就可以看到一个<strong>Extracting rootft</strong>的提示了,到这一里需要等待几分钟,随后就出先KALI的logo了.<br /><br>接下来输入这一行命令来给你的系统设置一个密码.<br /></p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">nethunter kex passwd</span><br></pre></td></tr></table></figure></div>
-<p>然后输入下面的这一个命令启动桌面环境.<br /></p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">nethunter kex &amp;</span><br></pre></td></tr></table></figure></div>
-<p>如果你要停止桌面环境的话请运行下面的这一个命令.<br /></p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">nethunter kex stop</span><br></pre></td></tr></table></figure></div>
-<p>运行桌面环境以后会出现一行** NetHunter KeX server sessions**,我们只看看下面的<strong>RFB PROT</strong>下面的端口,默认都是5901,我们打开VNC软件以后输入127.0.0.1:5901就可以连接上kali的桌面环境了.<br /><br>最后附上一个机翻的命令表,并且下面的nethunter和上面的nethunter都是可以缩写成nh的.<br /></p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>nethunter</td>
-<td>启动 Kali NetHunter 命令行界面</td>
-</tr>
-<tr>
-<td>nethunter kex passwd</td>
-<td>配置KeX密码（仅在第一次使用前需要）</td>
-</tr>
-<tr>
-<td>nethunter kex &amp;</td>
-<td>启动 Kali NetHunter Desktop Experience 用户会话</td>
-</tr>
-<tr>
-<td>nethunter kex stop</td>
-<td>停止 Kali NetHunter 桌面体验</td>
-</tr>
-<tr>
-<td>nethunter <command></td>
-<td>跑步在NetHunter环境中</td>
-</tr>
-<tr>
-<td>nethunter -r</td>
-<td>以 root 身份启动 Kali NetHunter cli</td>
-</tr>
-<tr>
-<td>nethunter -r kex passwd</td>
-<td>配置root的KeX密码</td>
-</tr>
-<tr>
-<td>nethunter -r kex &amp;</td>
-<td>以 root 身份启动 Kali  NetHunter 桌面体验</td>
-</tr>
-<tr>
-<td>nethunter -r kex stop</td>
-<td>停止 Kali NetHunter Desktop Experience root 会话</td>
-</tr>
-<tr>
-<td>nethunter -r kex kill</td>
-<td>杀死所有 KeX 会话</td>
-</tr>
-<tr>
-<td>nethunter -r <command></td>
-<td><command>以 root 身份在 NetHunter 环境中运行</td>
-</tr>
-</tbody></table>
-<h1 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h1><address>MFDGaming的脚本<a href = "https://github.com/MFDGaming/ubuntu-in-termux">ubuntu-in-termux</a></address>
-
-<address>wahasa的脚本<a href = "https://github.com/wahasa/Ubuntu">Ubuntu</a></address>
-
-<h1 id="其余Linux发行版"><a href="#其余Linux发行版" class="headerlink" title="其余Linux发行版"></a>其余Linux发行版</h1><address>请参考wahasa大佬制作的脚本<a href = "https://github.com/wahasa/Rootfs?tab=readme-ov-file">Rootfs</a></address>
-
-<h2 id="proot"><a href="#proot" class="headerlink" title="proot"></a>proot</h2><address>参考<a href = "https://wiki.termux.com/wiki/PRoot">Termux官方文档</a></address>
-
-<p>termux有收录了proot-distro，因此直接执行下面的命令就可以安装了。<br /></p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install proot-distro</span><br></pre></td></tr></table></figure></div>
-<p>然后输入下面的命令查看拥有什么发行版<br /></p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">proot-distro list</span><br></pre></td></tr></table></figure></div>
-<p>目前有下面这些发行版：<br /></p>
-<ul>
-<li>Alpine Linux</li>
-<li>Arch Linux</li>
-<li>Artix Linux</li>
-<li>Chimera Linux</li>
-<li>Debian (bookworm)</li>
-<li>Debian (bullseye)</li>
-<li>Deepin</li>
-<li>Fedora</li>
-<li>Manjaro</li>
-<li>OpenKylin</li>
-<li>OpenSUSE</li>
-<li>Pardus</li>
-<li>Ubuntu (24.04)</li>
-<li>Ubuntu (22.04)</li>
-<li>Void LInux<br>然后复制你想要安装的发行版，比如说我要安装Ubuntu (24.04)，就输入下面的命令。<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">proot-distro install ubuntu</span><br></pre></td></tr></table></figure></div>
-安装完成以后输入下面的命令登录<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">proot-distro login ubuntu</span><br></pre></td></tr></table></figure></div>
-想卸载掉ubuntu的话就输入下面的命令<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">proot-distro remove ubuntu</span><br></pre></td></tr></table></figure></div>
-输入下面的这个命令重新安装<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">proot-distro reset ubuntu</span><br></pre></td></tr></table></figure></div>
-如果你想知道更多有关proot-distro的信息，可以查看<a href ="https://github.com/termux/proot-distro?tab=readme-ov-file">proot-distro的官方文档</a><br /></li>
-</ul>
-<p>在官方文档里可以知晓如何自定义你的发行版以及构建发行版。或者可以查看下面这个网站来学习<a href = "https://ivonblog.com/posts/termux-proot-distro-add-custom-distro/">在Termux proot-distro使用自訂rootfs，建立Linux容器</a><br /></p>
-<p>如果你想模拟别的架构，请看<a href ="https://ivonblog.com/posts/termux-proot-distro-qemu-emulation/">用Termux qemu-user在ARM64架構的Android模擬執行x86_64的Ubuntu</a></p>
-<h2 id="tome"><a href="#tome" class="headerlink" title="tome"></a>tome</h2><p>初次之外也可以通过Zero Termux里的tome全自动全中文进行安装</p>
-]]></content>
-      <categories>
-        <category>操作系统</category>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Termux</tag>
-        <tag>Android</tag>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux on Android 的环境配置</title>
     <url>/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Android/Linux%20on%20Android%20%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p>本文参考以下文章：</p>
@@ -1505,19 +1377,18 @@
 <ul>
 <li><a class="link"   href="https://www.ruanyifeng.com/blog/2019/09/curl-reference.html" >curl用法指南 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
 </ul>
-<h1 id="桌面环境配置"><a href="#桌面环境配置" class="headerlink" title="桌面环境配置"></a>桌面环境配置</h1><address>参考<a href = "https://ivonblog.com/posts/termux-desktop-environment/">Termux安装图形桌面环境＋音讯输出教学</a></address>
-有的时候我们不单单需要终端环境，某些时候也需要桌面环境，例如当我们要看视频的时候,或者装逼的时候.**桌面环境不是必须的,选择安装**<br>
+<h1 id="桌面环境配置"><a href="#桌面环境配置" class="headerlink" title="桌面环境配置"></a>桌面环境配置</h1><address>参考<a href = "https://ivonblog.com/posts/termux-desktop-environment/">Termux安装图形桌面环境＋音讯输出教学</a></address><br />
+或者也可以查看官方文档<a href = "https://wiki.termux.com/wiki/Graphical_Environment#Desktop_environment">Graphical Environment</a><br />
 
-
-
-<h1 id="编译环境配置"><a href="#编译环境配置" class="headerlink" title="编译环境配置"></a>编译环境配置</h1><blockquote>
-<ul>
-<li>在安装完成基础的环境配置之后，可以参考下面的文章进行更进一步的进阶操作。<br></li>
-</ul>
-<blockquote>
-<p><a href="/学习/编程/环境配置/Linux/Linux 编译环境配置/" target="_blank">Linux编译环境配置</a></p>
-</blockquote>
-</blockquote>
+<p>有的时候我们不单单需要终端环境，某些时候也需要桌面环境，例如当我们要看视频的时候,或者装逼的时候.所以说桌面环境实际上在手机上不是必须的. <br /></p>
+<p>如果你在输入下面这个命令的时候出现了<strong>Unable to locate package</strong>的情况,可以尝试更换一下清华源.</p>
+<p>记得安装x11</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install x11-repo</span><br><span class="line">pkg install termux-x11-nightly</span><br></pre></td></tr></table></figure></div>
+<p>如果运行脚本的时候提示需要重新安装x11,那应该是你的x11有问题,比如说我是从ZeroTermux里直接安装的,就不行,需要去官网的releases下载<a href = "https://github.com/termux/termux-x11/releases">GitHub Releases</a><br /></p>
+<h1 id="编译环境配置"><a href="#编译环境配置" class="headerlink" title="编译环境配置"></a>编译环境配置</h1><p>在安装完成基础的环境配置之后，可以参考下面的文章进行更进一步的进阶操作。<br><br><a href="/学习/编程/环境配置/Linux/Linux 编译环境配置/" target="_blank">Linux编译环境配置</a></p>
+<h1 id="Mobox"><a href="#Mobox" class="headerlink" title="Mobox"></a>Mobox</h1><p>参考<a href = "https://ivonblog.com/posts/termux-mobox/">Android手机玩Steam上的Windows游戏 ～ Mobox模擬器使用教学</a><br /></p>
+<p>在更换中文字体的时候就按照<a href = "https://github.com/olegos2/mobox/issues/362">Mobox Iessues</a>里的操作来就可以设置成简体中文了.<br /></p>
+<p>在运行steam的时候termux可能会闪退,我也不清楚为什么，设备是MIx2S，系统版本是Android14。</p>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -1953,6 +1824,359 @@
       <tags>
         <tag>基础教程</tag>
         <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArchLinux的安装教程</title>
+    <url>/%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/ArchLinux%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>虽然说ArchLinux有一个安装脚本，但是为了能够更加的装逼一点，也多了解一些Linux系统，还是决定手动安装一个。</p>
+<h1 id="前置准备工作"><a href="#前置准备工作" class="headerlink" title="前置准备工作"></a>前置准备工作</h1><p>首先我们要去官网下载一个iso镜像，这是下载连接<br /><br><a href= "https://archlinux.org/download/" target="_blank" >Download</a><br /><br>根据自己的情况下载就可以了。<br /></p>
+<p>在这个时间里先过一遍<a class="link"   href="https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97"  target="_blank">官方文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br /></p>
+<p>下载完成以后，如果是装到实机上的话，可以先拿一个U盘用rufus做一个安装介质，当然也可以直接在U盘上面装一个ArchLinux，或者使用虚拟机安装，都是可以的。<br /></p>
+<p>随后进入bios里，将U盘作为第一启动项，然后保存退出，开机以后选择Arch Linux install medium并回车。<br /></p>
+<p>然后验证引导模式，请输入下面这个命令：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /sys/firmware/efi/fw_platform_size</span><br></pre></td></tr></table></figure></div>
+<p>如果命令结果为 64，则系统是以 UEFI 模式引导且使用 64 位 x64 UEFI。如果命令结果为 32，则系统是以 UEFI 模式引导且使用 32 位 IA32 UEFI，虽然其受支持，但引导加载程序只能使用 systemd-boot和GRUB。如果文件不存在，则系统可能是以BIOS模式（或 CSM 模式）引导。如果系统没有以您想要的模式（UEFI 或 BIOS）引导启动，请您参考自己的计算机或主板说明书。<br /></p>
+<p>然后检查一下互联网连接，请输入：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">ip link</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="创建分区"><a href="#创建分区" class="headerlink" title="创建分区"></a>创建分区</h1><p>输入下面的命令查看一下硬盘。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">fdisk -l</span><br></pre></td></tr></table></figure></div>
+
+<p>如果出现的是&#x2F;dev&#x2F;sda，就输入</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">fdisk /dev/sda</span><br></pre></td></tr></table></figure></div>
+
+<p>如果是&#x2F;dev&#x2F;nvme0n1，就输入</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">fdisk /dev/nvme0n1</span><br></pre></td></tr></table></figure></div>
+
+<p>如果是别的就按照这个格式输入别的。<br /><br>现在一般都是使用UEFI，所以说就按照创建GPT的方法来做教程了，MDR其实是类似的。<br /><br>输入完上面的命令以后输入g来创建一个GPT分区表，然后输入n来创建分区，创建分区的适合需要选择分区号，起始扇区和结束扇区。<br /><br>分区号我们不用特意去更改，起始扇区除非你想不然还是不要改了，结束扇区就需要自己输入。<br /><br>结束扇区的位置可以是：<br /><br>从磁盘起始位置开始的绝对位置。例如，40M 作为起始扇区，指定了距磁盘开头 40 MiB 的位置。<br /><br>在 +size 或 -size 后接大小的相对位置。例如，使用 +2G 以指定位于起始扇区之后 2 GiB 的位置，或使用 -200M 以指定位于最后一个可用扇区之前 200 MiB 的位置。<br>未输入扇区位置的指定值而直接按 Enter 键将使用默认值，对于起始扇区是最大可用块的开始位置，对于结束扇区则是最大可用块的结束位置<br /><br>这里我就按照最简单的方法来创建了，如果要创建一个更加复杂的分区，方法是一样的。<br /><br>首先我们创建一个EFI分区，如果你是Windows和ArchLinux双系统，就看官方文档。<br /><br>分区号和起始扇区都回车继续，在结束扇区的时候输入</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">+1G</span><br></pre></td></tr></table></figure></div>
+<p>回车，随后输入t更改分区类型，然后输入：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">EFI System</span><br></pre></td></tr></table></figure></div>
+
+<p>然后接着创建一个swap交换分区，还是刚才的操作，然后根据自己的情况选择交换分区大小，我这里就选8G了：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">+8G</span><br></pre></td></tr></table></figure></div>
+<p>回车以后按t，随后输入：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Linux swap</span><br></pre></td></tr></table></figure></div>
+
+<p>然后创建一个根分区，一路回车把剩下的空间都分给它，然后回车按t，随后输入：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Linux root (x86-64)</span><br></pre></td></tr></table></figure></div>
+<p>然后输入p查看刚刚更改的分区，如果按照上面的方法创建，那么到最后应该是这样的：<br><a href="https://sm.ms/image/CyRQvd36nbWYVSf" target="_blank"><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2024/12/04/CyRQvd36nbWYVSf.png"
+                      
+                ></a><br>然后输入w保存并退出，如果你觉得分配错了，可以按q放弃更改。<br /></p>
+<h1 id="格式化分区"><a href="#格式化分区" class="headerlink" title="格式化分区"></a>格式化分区</h1><p>如果你是一步一步按照上面的办法创建的分区，那么就输入下面这个命令。如果不是，就选择自己创建根分区的分区号。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkfs.ext4 /dev/sda3</span><br></pre></td></tr></table></figure></div>
+<p>然后初始化一下swap分区：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkswap /dev/sda2</span><br></pre></td></tr></table></figure></div>
+<p>最后创建一下EFI系统分区：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkfs.fat -F 32 /dev/sda1</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="挂载分区"><a href="#挂载分区" class="headerlink" title="挂载分区"></a>挂载分区</h1><p>将根磁盘卷挂载到 <code>/mnt</code></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">mount /dev/sda3 /mnt</span><br></pre></td></tr></table></figure></div>
+<p>然后cd到 <code>/mnt</code>，并在里面创建剩余的挂载点。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /mnt</span><br><span class="line">mount --mkdir /dev/sda1 /mnt/boot</span><br></pre></td></tr></table></figure></div>
+<p>然后启动一下swap交换分区：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">swapon /dev/sda2</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h1><h2 id="更改镜像站"><a href="#更改镜像站" class="headerlink" title="更改镜像站"></a>更改镜像站</h2><p>先用curl下载一下位于中国的镜像站：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -L &quot;https://archlinux.org/mirrorlist/?country=CN&amp;protocol=https&quot; -o /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure></div>
+<p>然后使用vim把想要的镜像站前面的#号删掉。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="安装必备软件包"><a href="#安装必备软件包" class="headerlink" title="安装必备软件包"></a>安装必备软件包</h2><p>使用 pacstrap(8) 脚本，安装 base包 软件包和 Linux 内核以及常规硬件的固件：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacstrap -K /mnt base linux linux-firmware</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="配置系统"><a href="#配置系统" class="headerlink" title="配置系统"></a>配置系统</h1><h2 id="生成fstab"><a href="#生成fstab" class="headerlink" title="生成fstab"></a>生成fstab</h2><p>通过以下命令生成 fstab 文件 (用 -U 或 -L 选项设置 UUID 或卷标)：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure></div>
+<p>强烈建议在执行完以上命令后，检查一下生成的 &#x2F;mnt&#x2F;etc&#x2F;fstab 文件是否正确。</p>
+<h2 id="chroot到新系统"><a href="#chroot到新系统" class="headerlink" title="chroot到新系统"></a>chroot到新系统</h2><p>输入下面的命令</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="设置时区"><a href="#设置时区" class="headerlink" title="设置时区"></a>设置时区</h2><p>请输入下面的命令</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure></div>
+
+<p>然后运行hwclock以生成 <code>/etc/adjtime</code></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">hwclock --systohc</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="区域和本地化设置"><a href="#区域和本地化设置" class="headerlink" title="区域和本地化设置"></a>区域和本地化设置</h2><p>然后我们先安装一个Vim：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S vim</span><br></pre></td></tr></table></figure></div>
+<p>然后倏然下面的命令生成locale信息：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">locale-gen</span><br></pre></td></tr></table></figure></div>
+
+<p>随后我们编辑 <code>/etc/locale.gen</code>，然后取消掉 <code>en_US.UTF-8 UTF-8</code> 和其他需要的 <code>UTF-8</code> 区域设置前的注释（#）。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim /etc/locale.gen</span><br></pre></td></tr></table></figure></div>
+<p>值得注意的是，官方文档里写着<address>并不推荐在此设置任何中文 locale，这可能会导致 tty 上中文显示为方块。如果您不经常使用 tty ，或是稍后需要安装桌面环境，则在不使用 tty 后可以设置为中文的 locale 。</address><br /><br>所以我就直接设置中文了，找到<code>zh_CN.UTF8 UTF8</code>以后，按下** i ** ，然后删掉#号，按<code>esc</code>退出编辑模式，然后<code>shift+:</code>，接着输入** wq ** 保存并退出。<br /></p>
+<p>接着我们编辑 <code>/etc/locale.conf</code>，按** i ** 进入编辑模式，并输入下面的内容：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">LANG=en_US.UTF8 zh_CN.UTF8</span><br></pre></td></tr></table></figure></div>
+<p>按<code>esc</code>，接着<code>shift+:</code>保存并退出，最后再执行一遍，<code>locale-gen</code></p>
+<h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><p>先创建创建 <code>hostname</code> 文件：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim /etc/hostname</span><br></pre></td></tr></table></figure></div>
+<p>然后设置你的主机名，我这里就设置Guan-ArchLinux了</p>
+<p>然后再ping一下，用于测试你是否可连接到某个主机, 用 <code>Ctrl+c</code> 停止测试。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">ping www.archlinux.org</span><br></pre></td></tr></table></figure></div>
+
+<p>值得注意的是官方文档有教怎么连接WIFI，但我这里用的是虚拟机演示，所以就以后再补上了，详情请看：<a href= "https://wiki.archlinuxcn.org/wiki/Iwd#iwctl" terget="_blank">iwd</a><br /></p>
+<p>然后需要安装一个网络管理器，这里就用NetworkManager做示范。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S networkmanager</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="设置Root密码"><a href="#设置Root密码" class="headerlink" title="设置Root密码"></a>设置Root密码</h2><p>输入下面的命令来设置密码，密码一共需要输入两次：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="安装引导程序"><a href="#安装引导程序" class="headerlink" title="安装引导程序"></a>安装引导程序</h1><p>我们就拿GRUB举例，首先输入下面的命令：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S grub efibootmgr</span><br></pre></td></tr></table></figure></div>
+<p>然后输入下面的命令</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB</span><br></pre></td></tr></table></figure></div>
+<p>最后输入下面的命令生成配置文件：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure></div>
+<p>然后就是重启并进入ArchLinux了，请先输入<code>exit</code>，等待退出chroot以后输入<code>reboot</code>，接着就可以看到下面的界面了，我们选择ArchLinux。<br><a href="https://sm.ms/image/wEj17a6DJVNqQCm" target="_blank"><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2024/12/04/wEj17a6DJVNqQCm.png"
+                      
+                ></a><br /></p>
+<p>然后选择用户，默认只有一个root，所以我们输入root并回车，然后输入刚才设置的密码。<br /></p>
+<h1 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h1><h2 id="创建新用户和用户组"><a href="#创建新用户和用户组" class="headerlink" title="创建新用户和用户组"></a>创建新用户和用户组</h2><p>如果你想自定义创建用户，就按照下面的格式创建一个账号。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">useradd -m -G &quot;附加组&quot; -s &quot;登录shell&quot; &quot;用户&quot;</span><br></pre></td></tr></table></figure></div>
+<p>-m&#x2F;–create-home：创建用户主目录&#x2F;home&#x2F;[用户名]；在自己的主目录内，即使不是root用户也可以读写文件、安装程序等等。<br /><br>-G&#x2F;–groups：用户要加入的附加组列表；使用逗号分隔多个组，不要添加空格；如果不设置，用户仅仅加入初始组。<br /><br>-s&#x2F;–shell：用户默认登录shell的路径；启动过程结束后，默认启动的登录shell在此处设定；请确保使用的shell已经安装，默认是 Bash。<br /></p>
+<p>如果不想，就输入下面的命令：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">useradd -m 你的用户名</span><br></pre></td></tr></table></figure></div>
+<p>然后给这个账号设置一个密码：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">passwd 你的用户名</span><br></pre></td></tr></table></figure></div>
+<h2 id="root权限"><a href="#root权限" class="headerlink" title="root权限"></a>root权限</h2><p>有时候一些命令需要root，但又不能以root用户运行，例如使用AUR安装软件，所以我们需要为用户添加权限，如下：<br /><br>首先进入一下root用户，接着编辑<code> /etc/sudoers </code>，在<code> root ALL=(ALL:ALL) ALL </code>下面添加这样的格式：<code> 用户名 ALL=(ALL:ALL) ALL</code></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim /etc/sudoers</span><br></pre></td></tr></table></figure></div>
+<p>保存并退出，如果<code> :wq </code>无效的话就<code> :wq! </code>强制退出。</p>
+<p>或者尝试编辑<code> /etc/sudoers </code>，将<code> wheel ALL=(ALL:ALL) ALL </code>前面的** # **删除。<br /></p>
+<p>最后使用下面的命令来查看你是否已经将用户添加到了wheel用户组：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">groups 用户名</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="AUR"><a href="#AUR" class="headerlink" title="AUR"></a>AUR</h2><p>执行：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S bash-devel</span><br></pre></td></tr></table></figure></div>
+<p>然后安装一个Git，输入下面的命令：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S git</span><br></pre></td></tr></table></figure></div>
+
+<p>然后我们进行一下第一次使用的配置<br /></p>
+<address>全局配置位于 /etc/makepkg.conf，还可以通过 $XDG_CONFIG_HOME/pacman/makepkg.conf 或 ~/.makepkg.conf 进行用户特定配置。你还可以添加 /etc/makepkg.conf.d/makepkg.conf 文件进行系统全局配置更改。在构建软件包前，建议先检查 makepkg 配置。<br /></address>
+
+<p>我这里就使用全局配置了</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim /etc/makepkg.conf</span><br></pre></td></tr></table></figure></div>
+
+<p>然后找到<code>#PACKAGER</code>并修改成你想要的名字，当然这一步你也可以不改，我只是为了好看。<br /></p>
+<p>然后就是配置一下输出目录，我这里就摸认了。<br /></p>
+<address>makepkg 默认会在工作目录创建软件包，并把源代码下载到 src/ 目录。可以配置到自定义的路径，比如将所有构建出的软件包放到 ~/build/packages/ 目录，所有源文件放到 ~/build/sources/ 目录下。<br />
+
+<p>根据需求不同，可以配置 makepkg.conf 下的这些变量：<br /></p>
+<p>PKGDEST - 软件包构建输出目录<br /><br>SRCDEST - 用于存放源数据的目录（在指向其它位置的情况下，软链接将被放置到 src&#x2F; 目录下）<br /><br>SRCPKGDEST - 源代码包构建输出目录（通过 makepkg -S 构建）<br /></p>
+</address><br />
+
+<p>随后我们输入<code>exit</code>退出root用户，然后登录刚才你创建的用户，因为AUR不能运行在root用户下。<br /><br>然后找到你想要的软件包，比方说<a href = "https://aur.archlinux.org/packages/yay">yay</a>，然后复制它的git clone url，输入下面的命令：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://aur.archlinux.org/yay.git</span><br></pre></td></tr></table></figure></div>
+<p>然后cd到你刚才下载的软件包目录，比方说yay</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd yay</span><br></pre></td></tr></table></figure></div>
+<p>然后用less检查一下每个文件，如果你看得懂的话：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S less</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">less PKGBUILD</span><br></pre></td></tr></table></figure></div>
+
+<p>然后我们进行构建并安装，最后删除软件包：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">makepkg -s -i -r</span><br></pre></td></tr></table></figure></div>
+<p>或者是</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">make -sir</span><br></pre></td></tr></table></figure></div>
+<address>
+-s/--syncdeps 在构建之前使用 pacman 自动解析和安装任何依赖项。如果包依赖于其他 AUR 包，则您应先手动安装它们。<br />
+-i/--install 安装成功的包。这使您可以跳过通常手动完成的下一步。<br />
+-r/--rmdeps 在构建后删除构建时依赖项，因为它们不再需要。但是，下次更新包时可能需要重新安装这些依赖项。<br />
+-c/--clean 在构建后清理临时构建文件，因为它们不再需要。这些文件通常仅在调试构建过程时才需要。<br />
+</address>
+
+<h3 id="yay"><a href="#yay" class="headerlink" title="yay"></a>yay</h3><p><strong>yay</strong> 是一个AUR助手，可以更方便的安装AUR软件，下面是一些基础使用方法。<br /></p>
+<p>Yay 遵循与 pacman 类似（但不相同）的命令结构。所以你用 Yay 管理 AUR 包应该不难。<br /></p>
+<p>搜索软件包：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">yay search_term</span><br></pre></td></tr></table></figure></div>
+
+<p>安装软件包：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">yay -S package_name</span><br></pre></td></tr></table></figure></div>
+
+<p>删除软件包：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">yay -R package_name</span><br></pre></td></tr></table></figure></div>
+
+<p>要删除包及其依赖项：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">yay -Rns package_name</span><br></pre></td></tr></table></figure></div>
+
+<p>仅升级 AUR 包：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">yay -Sua</span><br></pre></td></tr></table></figure></div>
+<p>Yay 还能够升级非 AUR 软件包。上面的 a 标志将其限制为 AUR。</p>
+<h2 id="图形界面"><a href="#图形界面" class="headerlink" title="图形界面"></a>图形界面</h2><p>ArchLinux官方支持了很多的图形界面，第三方支持的图像界面也很多，<address>详情请见<a href = "https://wiki.archlinuxcn.org/wiki/%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83" target="_blank">桌面环境</a></address><br /><br>我这里就使用 <strong>KDE</strong> 和 <strong>budgie</strong> 做演示了。</p>
+<h3 id="KDE"><a href="#KDE" class="headerlink" title="KDE"></a>KDE</h3><p>安装桌面</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S plasma-meta</span><br></pre></td></tr></table></figure></div>
+<p>安装全套KDE应用</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S kde-applications-meta</span><br></pre></td></tr></table></figure></div>
+<p>然后安装显示管理器</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S sddm</span><br></pre></td></tr></table></figure></div>
+<p>随后启用sddm</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl enable sddm</span><br></pre></td></tr></table></figure></div>
+<p>最后重启一遍就可以进入KDE了。<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2024/12/04/DM32KuTeGIA9Lwo.png"
+                     
+                ></img></p>
+<p>接着我们修改英文成中文，首先需要进入到终端,输入：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji</span><br></pre></td></tr></table></figure></div>
+<p>noto-fonts(基础字体集)，noto-fonts-cjk(中日韩字体集，主要是需要这个包)，noto-fonts-emoji(表情字体)<br /></p>
+<p>打开设置，选择 Regional Settings&gt;Regions &amp; Languages&gt;Language，将简体中文加到语言选项中，并将其优先级调整到最高。<br /></p>
+<h3 id="budgie"><a href="#budgie" class="headerlink" title="budgie"></a>budgie</h3><p>首先我们切换到root用户。<br /><br>然后输入下面的命令安装<strong>budgie</strong></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S budgie lightdm-gtk-greeter</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S arc-gtk-theme papirus-icon-theme network-manager-applet</span><br></pre></td></tr></table></figure></div>
+<p>启用lightdm</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl enable --now lightdm</span><br></pre></td></tr></table></figure></div>
+<p>等待完成以后就进入budgie图形界面了。<br /></p>
+<h2 id="常用软件"><a href="#常用软件" class="headerlink" title="常用软件"></a>常用软件</h2><p>可以查看<a class="link"   href="https://arch.icekylin.online/app/common/daily" >arch liunx 简明指南 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br />来选择自己想要的软件，这个指南里也包括了Arch Linux的安装和配置教程，可惜等我照着官方文档看完了才知道。</p>
+<h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><p>浏览器我选择的是Vivaldi，最开始是因为Chome网上成天说不安全，然后我就给换了。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo pacman -S vivaldi</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="文本编辑器"><a href="#文本编辑器" class="headerlink" title="文本编辑器"></a>文本编辑器</h3><p>终端界面我用的是vim，图形界面用的是vscode。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo pacman -S vim code</span><br></pre></td></tr></table></figure></div>
+
+
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h1 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h1><p>到现在你已经手动安装并配置了一个能够正常使用的Arch Linux了。为自己鼓个掌吧！👏👏👏<br /><br><img src = "https://tenor.com/zh-CN/view/cat-clapping-cat-silly-silly-cat-awkward-cat-gif-8634373961741432363.gif"></img></p>
+]]></content>
+      <categories>
+        <category>操作系统</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux in termux</title>
+    <url>/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Android/Linux%20in%20termux/</url>
+    <content><![CDATA[<p>很多时候随身带一个电脑其实不是很方便,这时候我们就可以在一部安卓手机里安装一个Linux系统.<br /><br>首先安装一个Termux,具体的可以去看这篇文章<a class="link"   href="https://blog.guanyi.lol/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Android/Linux%20on%20Android%20%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" >Linux on Android 的环境配置 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>来进行安装<br /><br>安装好以后还需要一个VNC软件进行连接,这个就随便下载了,F-droid上面一大堆,<br /></p>
+<h1 id="Debian"><a href="#Debian" class="headerlink" title="Debian"></a>Debian</h1><address>参考wahase<a href = "https://github.com/wahasa/Debian"></a></address>
+
+<h1 id="Kali-Linux"><a href="#Kali-Linux" class="headerlink" title="Kali Linux"></a>Kali Linux</h1><p>Kali Linux有两种方法安装</p>
+<address>参考官方文档:<a class="link"   href="https://www.kali.org/get-kali/#kali-mobile" >Nethunter Install <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></address>
+
+<address>wahasa的脚本<a href = "https://github.com/wahasa/Kali-Nethunter">Kali Nethunter</a></address>
+
+<p>输入下面这一行命令来获取储存空间权限.<br /></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">termux-setup-storage</span><br></pre></td></tr></table></figure></div>
+<p>接着输入下面这一行命令来安装wget.<br /></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install wget</span><br></pre></td></tr></table></figure></div>
+<p>接着输入下面这一行命令来下载脚本.<br /></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -O install-nethunter-termux https://offs.ec/2MceZWr</span><br></pre></td></tr></table></figure></div>
+<p>然后输入下面这行命令来给脚本文件权限.<br /></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod +x install-nethunter-termux</span><br></pre></td></tr></table></figure></div>
+<p>最后输入下面这一行命令来运行脚本.<br /></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">./install-nethunter-termux</span><br></pre></td></tr></table></figure></div>
+<p>接着可以看到一个KALI的logo和三个选项,写有<strong>full</strong>的是完整版的,写有<strong>minimal</strong>是最小版本,至于第三个nano我现在还没搞明白是啥意思,第一次遇见,所以我就安装完整的了,输入1以后回车,就会自动下载所需要的东西了.<br /><br>如果你第一次安装完成以后没有显示一个KALI的logo,那就重新运行一遍脚本,然后一路n下去,就可以看到一个<strong>Extracting rootft</strong>的提示了,到这一里需要等待几分钟,随后就出先KALI的logo了.<br /><br>接下来输入这一行命令来给你的系统设置一个密码.<br /></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">nethunter kex passwd</span><br></pre></td></tr></table></figure></div>
+<p>然后输入下面的这一个命令启动桌面环境.<br /></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">nethunter kex &amp;</span><br></pre></td></tr></table></figure></div>
+<p>如果你要停止桌面环境的话请运行下面的这一个命令.<br /></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">nethunter kex stop</span><br></pre></td></tr></table></figure></div>
+<p>运行桌面环境以后会出现一行** NetHunter KeX server sessions**,我们只看看下面的<strong>RFB PROT</strong>下面的端口,默认都是5901,我们打开VNC软件以后输入127.0.0.1:5901就可以连接上kali的桌面环境了.<br /><br>最后附上一个机翻的命令表,并且下面的nethunter和上面的nethunter都是可以缩写成nh的.<br /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nethunter</td>
+<td>启动 Kali NetHunter 命令行界面</td>
+</tr>
+<tr>
+<td>nethunter kex passwd</td>
+<td>配置KeX密码（仅在第一次使用前需要）</td>
+</tr>
+<tr>
+<td>nethunter kex &amp;</td>
+<td>启动 Kali NetHunter Desktop Experience 用户会话</td>
+</tr>
+<tr>
+<td>nethunter kex stop</td>
+<td>停止 Kali NetHunter 桌面体验</td>
+</tr>
+<tr>
+<td>nethunter <command></td>
+<td>跑步在NetHunter环境中</td>
+</tr>
+<tr>
+<td>nethunter -r</td>
+<td>以 root 身份启动 Kali NetHunter cli</td>
+</tr>
+<tr>
+<td>nethunter -r kex passwd</td>
+<td>配置root的KeX密码</td>
+</tr>
+<tr>
+<td>nethunter -r kex &amp;</td>
+<td>以 root 身份启动 Kali  NetHunter 桌面体验</td>
+</tr>
+<tr>
+<td>nethunter -r kex stop</td>
+<td>停止 Kali NetHunter Desktop Experience root 会话</td>
+</tr>
+<tr>
+<td>nethunter -r kex kill</td>
+<td>杀死所有 KeX 会话</td>
+</tr>
+<tr>
+<td>nethunter -r <command></td>
+<td><command>以 root 身份在 NetHunter 环境中运行</td>
+</tr>
+</tbody></table>
+<h1 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h1><address>MFDGaming的脚本<a href = "https://github.com/MFDGaming/ubuntu-in-termux">ubuntu-in-termux</a></address>
+
+<address>wahasa的脚本<a href = "https://github.com/wahasa/Ubuntu">Ubuntu</a></address>
+
+<h1 id="其余Linux发行版"><a href="#其余Linux发行版" class="headerlink" title="其余Linux发行版"></a>其余Linux发行版</h1><address>请参考wahasa大佬制作的脚本<a href = "https://github.com/wahasa/Rootfs?tab=readme-ov-file">Rootfs</a></address>
+
+<h2 id="proot"><a href="#proot" class="headerlink" title="proot"></a>proot</h2><address>参考<a href = "https://wiki.termux.com/wiki/PRoot">Termux官方文档</a></address>
+
+<p>termux有收录了proot-distro，因此直接执行下面的命令就可以安装了。<br /></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install proot-distro</span><br></pre></td></tr></table></figure></div>
+<p>然后输入下面的命令查看拥有什么发行版<br /></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">proot-distro list</span><br></pre></td></tr></table></figure></div>
+<p>目前有下面这些发行版：<br /></p>
+<ul>
+<li>Alpine Linux</li>
+<li>Arch Linux</li>
+<li>Artix Linux</li>
+<li>Chimera Linux</li>
+<li>Debian (bookworm)</li>
+<li>Debian (bullseye)</li>
+<li>Deepin</li>
+<li>Fedora</li>
+<li>Manjaro</li>
+<li>OpenKylin</li>
+<li>OpenSUSE</li>
+<li>Pardus</li>
+<li>Ubuntu (24.04)</li>
+<li>Ubuntu (22.04)</li>
+<li>Void LInux<br>然后复制你想要安装的发行版，比如说我要安装Ubuntu (24.04)，就输入下面的命令。<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">proot-distro install ubuntu</span><br></pre></td></tr></table></figure></div>
+安装完成以后输入下面的命令登录<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">proot-distro login ubuntu</span><br></pre></td></tr></table></figure></div>
+想卸载掉ubuntu的话就输入下面的命令<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">proot-distro remove ubuntu</span><br></pre></td></tr></table></figure></div>
+输入下面的这个命令重新安装<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">proot-distro reset ubuntu</span><br></pre></td></tr></table></figure></div>
+如果你想知道更多有关proot-distro的信息，可以查看<a href ="https://github.com/termux/proot-distro?tab=readme-ov-file">proot-distro的官方文档</a><br /></li>
+</ul>
+<p>在官方文档里可以知晓如何自定义你的发行版以及构建发行版。或者可以查看下面这个网站来学习<a href = "https://ivonblog.com/posts/termux-proot-distro-add-custom-distro/">在Termux proot-distro使用自訂rootfs，建立Linux容器</a><br /></p>
+<p>如果你想模拟别的架构，请看<a href ="https://ivonblog.com/posts/termux-proot-distro-qemu-emulation/">用Termux qemu-user在ARM64架構的Android模擬執行x86_64的Ubuntu</a></p>
+<h2 id="tome"><a href="#tome" class="headerlink" title="tome"></a>tome</h2><p>初次之外也可以通过Zero Termux里的tome全自动全中文进行安装</p>
+]]></content>
+      <categories>
+        <category>操作系统</category>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Termux</tag>
+        <tag>Android</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
 </search>
