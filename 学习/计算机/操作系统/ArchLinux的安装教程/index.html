@@ -1,0 +1,488 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>ArchLinux的安装教程 | NineHeaven</title><meta name="author" content="关轶,mazf628@gmail.com"><meta name="copyright" content="关轶"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Arch大法好">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ArchLinux的安装教程">
+<meta property="og:url" content="http://blog.guanyi.lol/%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/ArchLinux%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="NineHeaven">
+<meta property="og:description" content="Arch大法好">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2024/11/10/nWIKsA9zYl5UcMw.jpg">
+<meta property="article:published_time" content="2024-12-03T12:42:47.000Z">
+<meta property="article:modified_time" content="2025-03-22T06:41:35.321Z">
+<meta property="article:author" content="关轶">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2024/11/10/nWIKsA9zYl5UcMw.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ArchLinux的安装教程",
+  "url": "http://blog.guanyi.lol/%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/ArchLinux%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/",
+  "image": "https://s2.loli.net/2024/11/10/nWIKsA9zYl5UcMw.jpg",
+  "datePublished": "2024-12-03T12:42:47.000Z",
+  "dateModified": "2025-03-22T06:41:35.321Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "关轶",
+      "url": "https://blog.guanyi.lol"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://blog.guanyi.lol/%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/ArchLinux%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 10 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-B7RD6MTMQC"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-B7RD6MTMQC')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-B7RD6MTMQC', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'FancyBox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyloadPlugin: false,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ArchLinux的安装教程',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (true) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="web_bg" style="background-image: url(https://s2.loli.net/2024/07/10/V5RmUxk79ivpldb.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://s2.loli.net/2024/11/10/nWIKsA9zYl5UcMw.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">25</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时光轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 小工具</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/HTML/tool/news/"><i class="fa-fw fas fa-newspaper"></i><span> 每日新闻</span></a></li><li><a class="site-page child" href="/HTML/%E5%90%AC%E9%9B%A8%E5%A4%9C%E7%9A%84%E5%A3%B0%E9%9F%B3/"><i class="fa-fw fas fa-cloud-showers-heavy"></i><span> 听雨夜的声音</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-headphones"></i><span> 音乐屋</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 小伙伴</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-star"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 自我介绍</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://love.guanyi.lol"><i class="fa-fw fas fa-user-astronaut"></i><span> 纪念馆</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: transparent;"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="https://s2.loli.net/2024/11/10/5dqFGEwmxQY3OeS.png" alt="Logo"><span class="site-name">NineHeaven</span></a><a class="nav-page-title" href="/"><span class="site-name">ArchLinux的安装教程</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时光轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 小工具</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/HTML/tool/news/"><i class="fa-fw fas fa-newspaper"></i><span> 每日新闻</span></a></li><li><a class="site-page child" href="/HTML/%E5%90%AC%E9%9B%A8%E5%A4%9C%E7%9A%84%E5%A3%B0%E9%9F%B3/"><i class="fa-fw fas fa-cloud-showers-heavy"></i><span> 听雨夜的声音</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-headphones"></i><span> 音乐屋</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 小伙伴</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-star"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 自我介绍</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://love.guanyi.lol"><i class="fa-fw fas fa-user-astronaut"></i><span> 纪念馆</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">ArchLinux的安装教程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-12-03T12:42:47.000Z" title="发表于 2024-12-03 20:42:47">2024-12-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-22T06:41:35.321Z" title="更新于 2025-03-22 14:41:35">2025-03-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">3.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>12分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;这篇文章已经&quot;,&quot;messageNext&quot;:&quot;没有更新过了，可能和我一样已经追不上潮流了。&quot;,&quot;postUpdate&quot;:&quot;2025-03-22 14:41:35&quot;}" hidden></div><p>虽然说ArchLinux有一个安装脚本，但是为了能够更加<del>装逼</del>印象深刻一点，也多了解一些Linux系统，还是决定手动安装一个。</p>
+<h1 id="前置准备工作"><a href="#前置准备工作" class="headerlink" title="前置准备工作"></a>前置准备工作</h1><p>首先我们要去官网下载一个iso镜像，这是下载连接<br /><br><a href= "https://archlinux.org/download/" target="_blank" >Download</a><br /><br>根据自己的情况下载就可以了。<br /></p>
+<p>在这个时间里可以先看一遍官方文档<address><a href="https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97" target="_blank">官方文档</a></address><br /></p>
+<p>下载完成以后，如果是装到实机上的话，可以先拿一个U盘用rufus做一个安装介质，当然也可以直接在U盘上面装一个ArchLinux，或者使用虚拟机安装，都是可以的。<br /></p>
+<p>随后进入bios里，将U盘作为第一启动项，然后保存退出，开机以后选择Arch Linux install medium并回车。<br /></p>
+<p>然后验证引导模式，请输入下面这个命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /sys/firmware/efi/fw_platform_size</span><br></pre></td></tr></table></figure>
+<p>如果命令结果为 64，则系统是以 UEFI 模式引导且使用 64 位 x64 UEFI。如果命令结果为 32，则系统是以 UEFI 模式引导且使用 32 位 IA32 UEFI，虽然其受支持，但引导加载程序只能使用 systemd-boot和GRUB。如果文件不存在，则系统可能是以BIOS模式（或 CSM 模式）引导。如果系统没有以您想要的模式（UEFI 或 BIOS）引导启动，请您参考自己的计算机或主板说明书。<br /></p>
+<p>然后检查一下互联网连接，请输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip link</span><br></pre></td></tr></table></figure>
+
+<h1 id="创建分区"><a href="#创建分区" class="headerlink" title="创建分区"></a>创建分区</h1><p>输入下面的命令查看一下硬盘。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk -l</span><br></pre></td></tr></table></figure>
+
+<p>如果出现的是&#x2F;dev&#x2F;sda，就输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk /dev/sda</span><br></pre></td></tr></table></figure>
+
+<p>如果是&#x2F;dev&#x2F;nvme0n1，就输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk /dev/nvme0n1</span><br></pre></td></tr></table></figure>
+
+<p>如果是别的就按照这个格式输入别的。<br /><br>现在一般都是使用UEFI，所以说就按照创建GPT的方法来做教程了，MDR其实是类似的。<br /><br>输入完上面的命令以后输入g来创建一个GPT分区表，然后输入n来创建分区，创建分区的适合需要选择分区号，起始扇区和结束扇区。<br /><br>分区号我们不用特意去更改，起始扇区除非你想不然还是不要改了，结束扇区就需要自己输入。<br /><br>结束扇区的位置可以是：<br /><br>从磁盘起始位置开始的绝对位置。例如，40M 作为起始扇区，指定了距磁盘开头 40 MiB 的位置。<br /><br>在 +size 或 -size 后接大小的相对位置。例如，使用 +2G 以指定位于起始扇区之后 2 GiB 的位置，或使用 -200M 以指定位于最后一个可用扇区之前 200 MiB 的位置。<br>未输入扇区位置的指定值而直接按 Enter 键将使用默认值，对于起始扇区是最大可用块的开始位置，对于结束扇区则是最大可用块的结束位置<br /><br>这里我就按照最简单的方法来创建了，如果要创建一个更加复杂的分区，方法是一样的。<br /><br>首先我们创建一个EFI分区，如果你是Windows和ArchLinux双系统，就看官方文档。<br /><br>分区号和起始扇区都回车继续，在结束扇区的时候输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+1G</span><br></pre></td></tr></table></figure>
+<p>回车，随后输入t更改分区类型，然后输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EFI System</span><br></pre></td></tr></table></figure>
+
+<p>然后接着创建一个swap交换分区，还是刚才的操作，然后根据自己的情况选择交换分区大小，我这里就选8G了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+8G</span><br></pre></td></tr></table></figure>
+<p>回车以后按t，随后输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Linux swap</span><br></pre></td></tr></table></figure>
+
+<p>然后创建一个根分区，一路回车把剩下的空间都分给它，然后回车按t，随后输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Linux root (x86-64)</span><br></pre></td></tr></table></figure>
+<p>然后输入p查看刚刚更改的分区，如果按照上面的方法创建，那么到最后应该是这样的：<br><a href="https://sm.ms/image/CyRQvd36nbWYVSf" target="_blank"><img src="https://s2.loli.net/2024/12/04/CyRQvd36nbWYVSf.png" ></a><br>然后输入w保存并退出，如果你觉得分配错了，可以按q放弃更改。<br /></p>
+<h1 id="格式化分区"><a href="#格式化分区" class="headerlink" title="格式化分区"></a>格式化分区</h1><p>如果你是一步一步按照上面的办法创建的分区，那么就输入下面这个命令。如果不是，就选择自己创建根分区的分区号。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/sda3</span><br></pre></td></tr></table></figure>
+<p>然后初始化一下swap分区：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkswap /dev/sda2</span><br></pre></td></tr></table></figure>
+<p>最后创建一下EFI系统分区：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.fat -F 32 /dev/sda1</span><br></pre></td></tr></table></figure>
+
+<h1 id="挂载分区"><a href="#挂载分区" class="headerlink" title="挂载分区"></a>挂载分区</h1><p>将根磁盘卷挂载到 <code>/mnt</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda3 /mnt</span><br></pre></td></tr></table></figure>
+<p>然后cd到 <code>/mnt</code>，并在里面创建剩余的挂载点。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /mnt</span><br><span class="line">mount --mkdir /dev/sda1 /mnt/boot</span><br></pre></td></tr></table></figure>
+<p>然后启动一下swap交换分区：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon /dev/sda2</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h1><h2 id="更改镜像站"><a href="#更改镜像站" class="headerlink" title="更改镜像站"></a>更改镜像站</h2><p>先用curl下载一下位于中国的镜像站：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L &quot;https://archlinux.org/mirrorlist/?country=CN&amp;protocol=https&quot; -o /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure>
+<p>然后使用vim把想要的镜像站前面的#号删掉。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装必备软件包"><a href="#安装必备软件包" class="headerlink" title="安装必备软件包"></a>安装必备软件包</h2><p>使用 pacstrap(8) 脚本，安装 base包 软件包和 Linux 内核以及常规硬件的固件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacstrap -K /mnt base linux linux-firmware</span><br></pre></td></tr></table></figure>
+
+<h1 id="配置系统"><a href="#配置系统" class="headerlink" title="配置系统"></a>配置系统</h1><h2 id="生成fstab"><a href="#生成fstab" class="headerlink" title="生成fstab"></a>生成fstab</h2><p>通过以下命令生成 fstab 文件 (用 -U 或 -L 选项设置 UUID 或卷标)：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
+<p>强烈建议在执行完以上命令后，检查一下生成的 &#x2F;mnt&#x2F;etc&#x2F;fstab 文件是否正确。</p>
+<h2 id="chroot到新系统"><a href="#chroot到新系统" class="headerlink" title="chroot到新系统"></a>chroot到新系统</h2><p>输入下面的命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure>
+
+<h2 id="设置时区"><a href="#设置时区" class="headerlink" title="设置时区"></a>设置时区</h2><p>请输入下面的命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
+
+<p>然后运行hwclock以生成 <code>/etc/adjtime</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hwclock --systohc</span><br></pre></td></tr></table></figure>
+
+<h2 id="区域和本地化设置"><a href="#区域和本地化设置" class="headerlink" title="区域和本地化设置"></a>区域和本地化设置</h2><p>然后我们先安装一个Vim：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S vim</span><br></pre></td></tr></table></figure>
+<p>然后倏然下面的命令生成locale信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locale-gen</span><br></pre></td></tr></table></figure>
+
+<p>随后我们编辑 <code>/etc/locale.gen</code>，然后取消掉 <code>en_US.UTF-8 UTF-8</code> 和其他需要的 <code>UTF-8</code> 区域设置前的注释（#）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/locale.gen</span><br></pre></td></tr></table></figure>
+<p>值得注意的是，官方文档里写着<address>并不推荐在此设置任何中文 locale，这可能会导致 tty 上中文显示为方块。如果您不经常使用 tty ，或是稍后需要安装桌面环境，则在不使用 tty 后可以设置为中文的 locale 。</address><br /><br>所以我就直接设置中文了，找到<code>zh_CN.UTF8 UTF8</code>以后，按下** i ** ，然后删掉#号，按<code>esc</code>退出编辑模式，然后<code>shift+:</code>，接着输入** wq ** 保存并退出。<br /></p>
+<p>接着我们编辑 <code>/etc/locale.conf</code>，按** i ** 进入编辑模式，并输入下面的内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LANG=en_US.UTF8 zh_CN.UTF8</span><br></pre></td></tr></table></figure>
+<p>按<code>esc</code>，接着<code>shift+:</code>保存并退出，最后再执行一遍，<code>locale-gen</code></p>
+<h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><p>先创建创建 <code>hostname</code> 文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/hostname</span><br></pre></td></tr></table></figure>
+<p>然后设置你的主机名，我这里就设置Guan-ArchLinux了</p>
+<p>然后再ping一下，用于测试你是否可连接到某个主机, 用 <code>Ctrl+c</code> 停止测试。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping www.archlinux.org</span><br></pre></td></tr></table></figure>
+
+<p>值得注意的是官方文档有教怎么连接WIFI，但我这里用的是虚拟机演示，所以就以后再补上了，详情请看：<a href= "https://wiki.archlinuxcn.org/wiki/Iwd#iwctl" terget="_blank">iwd</a><br /></p>
+<p>然后需要安装一个网络管理器，这里就用NetworkManager做示范。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S networkmanager</span><br></pre></td></tr></table></figure>
+
+<h2 id="设置Root密码"><a href="#设置Root密码" class="headerlink" title="设置Root密码"></a>设置Root密码</h2><p>输入下面的命令来设置密码，密码一共需要输入两次：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装引导程序"><a href="#安装引导程序" class="headerlink" title="安装引导程序"></a>安装引导程序</h1><p>我们就拿GRUB举例，首先输入下面的命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S grub efibootmgr</span><br></pre></td></tr></table></figure>
+<p>然后输入下面的命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB</span><br></pre></td></tr></table></figure>
+<p>最后输入下面的命令生成配置文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+<p>然后就是重启并进入ArchLinux了，请先输入<code>exit</code>，等待退出chroot以后输入<code>reboot</code>，接着就可以看到下面的界面了，我们选择ArchLinux。<br><a href="https://sm.ms/image/wEj17a6DJVNqQCm" target="_blank"><img src="https://s2.loli.net/2024/12/04/wEj17a6DJVNqQCm.png" ></a><br /></p>
+<p>然后选择用户，默认只有一个root，所以我们输入root并回车，然后输入刚才设置的密码。<br /></p>
+<h1 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h1><h2 id="创建新用户和用户组"><a href="#创建新用户和用户组" class="headerlink" title="创建新用户和用户组"></a>创建新用户和用户组</h2><p>如果你想自定义创建用户，就按照下面的格式创建一个账号。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd -m -G &quot;附加组&quot; -s &quot;登录shell&quot; &quot;用户&quot;</span><br></pre></td></tr></table></figure>
+<p>-m&#x2F;–create-home：创建用户主目录&#x2F;home&#x2F;[用户名]；在自己的主目录内，即使不是root用户也可以读写文件、安装程序等等。<br /><br>-G&#x2F;–groups：用户要加入的附加组列表；使用逗号分隔多个组，不要添加空格；如果不设置，用户仅仅加入初始组。<br /><br>-s&#x2F;–shell：用户默认登录shell的路径；启动过程结束后，默认启动的登录shell在此处设定；请确保使用的shell已经安装，默认是 Bash。<br /></p>
+<p>如果不想，就输入下面的命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd -m 你的用户名</span><br></pre></td></tr></table></figure>
+<p>然后给这个账号设置一个密码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd 你的用户名</span><br></pre></td></tr></table></figure>
+<h2 id="root权限"><a href="#root权限" class="headerlink" title="root权限"></a>root权限</h2><p>有时候一些命令需要root，但又不能以root用户运行，例如使用AUR安装软件，所以我们需要为用户添加权限，如下：<br /><br>首先进入一下root用户，接着编辑<code> /etc/sudoers </code>，在<code> root ALL=(ALL:ALL) ALL </code>下面添加这样的格式：<code> 用户名 ALL=(ALL:ALL) ALL</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sudoers</span><br></pre></td></tr></table></figure>
+<p>保存并退出，如果<code> :wq </code>无效的话就<code> :wq! </code>强制退出。</p>
+<p>或者尝试编辑<code> /etc/sudoers </code>，将<code> wheel ALL=(ALL:ALL) ALL </code>前面的** # **删除。<br /></p>
+<p>最后使用下面的命令来查看你是否已经将用户添加到了wheel用户组：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groups 用户名</span><br></pre></td></tr></table></figure>
+
+<h2 id="AUR"><a href="#AUR" class="headerlink" title="AUR"></a>AUR</h2><p>执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S bash-devel</span><br></pre></td></tr></table></figure>
+<p>然后安装一个Git，输入下面的命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S git</span><br></pre></td></tr></table></figure>
+
+<p>然后我们进行一下第一次使用的配置<br /></p>
+<address>全局配置位于 /etc/makepkg.conf，还可以通过 $XDG_CONFIG_HOME/pacman/makepkg.conf 或 ~/.makepkg.conf 进行用户特定配置。你还可以添加 /etc/makepkg.conf.d/makepkg.conf 文件进行系统全局配置更改。在构建软件包前，建议先检查 makepkg 配置。<br /></address>
+
+<p>我这里就使用全局配置了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/makepkg.conf</span><br></pre></td></tr></table></figure>
+
+<p>然后找到<code>#PACKAGER</code>并修改成你想要的名字，当然这一步你也可以不改，我只是为了好看。<br /></p>
+<p>然后就是配置一下输出目录，我这里就摸认了。<br /></p>
+<address>makepkg 默认会在工作目录创建软件包，并把源代码下载到 src/ 目录。可以配置到自定义的路径，比如将所有构建出的软件包放到 ~/build/packages/ 目录，所有源文件放到 ~/build/sources/ 目录下。<br />
+
+<p>根据需求不同，可以配置 makepkg.conf 下的这些变量：<br /></p>
+<p>PKGDEST - 软件包构建输出目录<br /><br>SRCDEST - 用于存放源数据的目录（在指向其它位置的情况下，软链接将被放置到 src&#x2F; 目录下）<br /><br>SRCPKGDEST - 源代码包构建输出目录（通过 makepkg -S 构建）<br /></p>
+</address><br />
+
+<p>随后我们输入<code>exit</code>退出root用户，然后登录刚才你创建的用户，因为AUR不能运行在root用户下。<br /><br>然后找到你想要的软件包，比方说<a href = "https://aur.archlinux.org/packages/yay">yay</a>，然后复制它的git clone url，输入下面的命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://aur.archlinux.org/yay.git</span><br></pre></td></tr></table></figure>
+<p>然后cd到你刚才下载的软件包目录，比方说yay</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd yay</span><br></pre></td></tr></table></figure>
+<p>然后用less检查一下每个文件，如果你看得懂的话：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S less</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">less PKGBUILD</span><br></pre></td></tr></table></figure>
+
+<p>然后我们进行构建并安装，最后删除软件包：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">makepkg -s -i -r</span><br></pre></td></tr></table></figure>
+<p>或者是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">makepkg -sir</span><br></pre></td></tr></table></figure>
+<address>
+-s/--syncdeps 在构建之前使用 pacman 自动解析和安装任何依赖项。如果包依赖于其他 AUR 包，则您应先手动安装它们。<br />
+-i/--install 安装成功的包。这使您可以跳过通常手动完成的下一步。<br />
+-r/--rmdeps 在构建后删除构建时依赖项，因为它们不再需要。但是，下次更新包时可能需要重新安装这些依赖项。<br />
+-c/--clean 在构建后清理临时构建文件，因为它们不再需要。这些文件通常仅在调试构建过程时才需要。<br />
+</address>
+
+<h3 id="yay"><a href="#yay" class="headerlink" title="yay"></a>yay</h3><p><strong>yay</strong> 是一个AUR助手，可以更方便的安装AUR软件，下面是一些基础使用方法。<br /></p>
+<p>Yay 遵循与 pacman 类似（但不相同）的命令结构。所以你用 Yay 管理 AUR 包应该不难。<br /></p>
+<p>搜索软件包：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay search_term</span><br></pre></td></tr></table></figure>
+
+<p>安装软件包：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S package_name</span><br></pre></td></tr></table></figure>
+
+<p>删除软件包：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -R package_name</span><br></pre></td></tr></table></figure>
+
+<p>要删除包及其依赖项：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -Rns package_name</span><br></pre></td></tr></table></figure>
+
+<p>仅升级 AUR 包：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -Sua</span><br></pre></td></tr></table></figure>
+<p>Yay 还能够升级非 AUR 软件包。上面的 a 标志将其限制为 AUR。</p>
+<h2 id="图形界面"><a href="#图形界面" class="headerlink" title="图形界面"></a>图形界面</h2><p>ArchLinux官方支持了很多的图形界面，第三方支持的图像界面也很多，<address>详情请见<a href = "https://wiki.archlinuxcn.org/wiki/%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83" target="_blank">桌面环境</a></address><br /><br>我这里就使用 <strong>KDE</strong> 和 <strong>budgie</strong> 做演示了。</p>
+<h3 id="KDE"><a href="#KDE" class="headerlink" title="KDE"></a>KDE</h3><p>安装桌面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S plasma-meta</span><br></pre></td></tr></table></figure>
+<p>安装全套KDE应用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S kde-applications-meta</span><br></pre></td></tr></table></figure>
+<p>然后安装显示管理器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S sddm</span><br></pre></td></tr></table></figure>
+<p>随后启用sddm</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable sddm</span><br></pre></td></tr></table></figure>
+<p>最后重启一遍就可以进入KDE了。<br><img src="https://s2.loli.net/2024/12/04/DM32KuTeGIA9Lwo.png"></img></p>
+<p>接着我们修改英文成中文，首先需要进入到终端,输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji</span><br></pre></td></tr></table></figure>
+<p>noto-fonts(基础字体集)，noto-fonts-cjk(中日韩字体集，主要是需要这个包)，noto-fonts-emoji(表情字体)<br /></p>
+<p>打开设置，选择 Regional Settings&gt;Regions &amp; Languages&gt;Language，将简体中文加到语言选项中，并将其优先级调整到最高。<br /></p>
+<h3 id="budgie"><a href="#budgie" class="headerlink" title="budgie"></a>budgie</h3><p>首先我们切换到root用户。<br /><br>然后输入下面的命令安装<strong>budgie</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S budgie lightdm-gtk-greeter</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S arc-gtk-theme papirus-icon-theme network-manager-applet</span><br></pre></td></tr></table></figure>
+<p>启用lightdm</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable --now lightdm</span><br></pre></td></tr></table></figure>
+<p>等待完成以后就进入budgie图形界面了。<br /></p>
+<h2 id="常用软件"><a href="#常用软件" class="headerlink" title="常用软件"></a>常用软件</h2><p>可以查看<a target="_blank" rel="noopener" href="https://arch.icekylin.online/app/common/daily">arch liunx 简明指南</a><br />来选择自己想要的软件，这个指南里也包括了Arch Linux的安装和配置教程，可惜等我照着官方文档看完了才知道。</p>
+<h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><p>Vivaldi或者是floorp，最开始是因为Chome网上成天说不安全，然后我就给换成了vivaldi，但是后来发现vivaldi怎么说呢，功能太多，太过于臃肿，而且内核和Chrome是一个，所以再后面换成了Firefox内核的floorp，虽然这是一个来自于日本的，但是不想Vivaldi，floorp和Firefox互通挺强的，后续可以换。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S floorp-bin</span><br></pre></td></tr></table></figure>
+
+<h3 id="文本编辑器"><a href="#文本编辑器" class="headerlink" title="文本编辑器"></a>文本编辑器</h3><p>终端界面我用的是vim，图形界面用的是vscode。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S vim code</span><br></pre></td></tr></table></figure>
+
+<h3 id="电子书阅读器"><a href="#电子书阅读器" class="headerlink" title="电子书阅读器"></a>电子书阅读器</h3><p>我用的是calibre</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S calibre</span><br></pre></td></tr></table></figure>
+
+<h3 id="聊天通讯"><a href="#聊天通讯" class="headerlink" title="聊天通讯"></a>聊天通讯</h3><p>Telegram</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S telegram-desktop-bin</span><br></pre></td></tr></table></figure>
+
+<p>Linuxqq</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S linuxqq</span><br></pre></td></tr></table></figure>
+
+<h3 id="游戏娱乐"><a href="#游戏娱乐" class="headerlink" title="游戏娱乐"></a>游戏娱乐</h3><p>Steam<br /><br>首先vim进入到&#x2F;etc&#x2F;pacman.conf</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/pacman.conf</span><br></pre></td></tr></table></figure>
+<p>然后将下面这两行里的#去掉</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#[multilib]</span><br><span class="line">#Include = /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure>
+<p>然后执行下面的命令就可以安装Steam了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Sy steam</span><br></pre></td></tr></table></figure>
+
+<h1 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h1><p>到现在你已经手动安装并配置了一个能够正常使用的Arch Linux了，为自己鼓个掌吧！👏👏👏<br /><br><img src = "https://tenor.com/zh-CN/view/cat-clapping-cat-silly-silly-cat-awkward-cat-gif-8634373961741432363.gif"></img></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.guanyi.lol">关轶</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://blog.guanyi.lol/%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/ArchLinux%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">http://blog.guanyi.lol/学习/计算机/操作系统/ArchLinux的安装教程/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://blog.guanyi.lol" target="_blank">NineHeaven</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><a class="post-meta__tags" href="/tags/Linux/">Linux</a></div><div class="post-share"><div class="social-share" data-image="https://s2.loli.net/2024/11/10/nWIKsA9zYl5UcMw.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://s2.loli.net/2024/12/05/wsQrZMfzvko1IXc.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://s2.loli.net/2024/12/05/wsQrZMfzvko1IXc.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux%20in%20termux/" title="Linux in termux"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">Linux in termux</div></div><div class="info-2"><div class="info-item-1">在Termux里安装Linux.</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0/%E8%AE%BE%E8%AE%A1/%E6%9C%BA%E6%A2%B0/SolidWorks%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F/" title="SolidWorks 从入门到入土"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">SolidWorks 从入门到入土</div></div><div class="info-2"><div class="info-item-1">你是否有时会想要一个自己动手做一个小玩意出来呢？或者有一些天马行空的想象呢？那就来学习SolidWorks吧！</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C/VPN/%E5%88%A9%E7%94%A8VPS%E6%90%AD%E5%BB%BAVPN/" title="利用VPS搭建VPN"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-16</div><div class="info-item-2">利用VPS搭建VPN</div></div><div class="info-2"><div class="info-item-1">买了VPS却不知有什么用?那就来搭一个VPN吧</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C/%E5%BB%BA%E7%AB%99/hexo%E5%BB%BA%E7%AB%99%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F/" title="hexo建站从入门到入土"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-17</div><div class="info-item-2">hexo建站从入门到入土</div></div><div class="info-2"><div class="info-item-1">hexo建站的一些笔记</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E5%91%BD%E4%BB%A4/Git/Git%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/" title="Git基础教程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-15</div><div class="info-item-2">Git基础教程</div></div><div class="info-2"><div class="info-item-1">Git学习笔记</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80/HTML/HTML%E5%85%A5%E9%97%A8/" title="HTML入门"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-23</div><div class="info-item-2">HTML入门</div></div><div class="info-2"><div class="info-item-1">HTML学习笔记</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80/JavaScript/JS%E5%85%A5%E9%97%A8/" title="JavaScript入门"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-20</div><div class="info-item-2">JavaScript入门</div></div><div class="info-2"><div class="info-item-1">JS学习笔记</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E8%AF%AD%E8%A8%80/%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/C%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/" title="C语言入门"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-23</div><div class="info-item-2">C语言入门</div></div><div class="info-2"><div class="info-item-1">这是一篇C语言入门笔记</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://s2.loli.net/2024/11/10/nWIKsA9zYl5UcMw.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">关轶</div><div class="author-info-description">我爱这世界，爱你，爱你们，愿这世间无病无痛，再无悲伤。</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">25</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/frost-MAZF"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/frost-MAZF" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:mazf628@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">世界很美好，大家要好好爱自己，爱身边的人。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">前置准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%88%86%E5%8C%BA"><span class="toc-number">2.</span> <span class="toc-text">创建分区</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%88%86%E5%8C%BA"><span class="toc-number">3.</span> <span class="toc-text">格式化分区</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA"><span class="toc-number">4.</span> <span class="toc-text">挂载分区</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F"><span class="toc-number">5.</span> <span class="toc-text">安装系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E9%95%9C%E5%83%8F%E7%AB%99"><span class="toc-number">5.1.</span> <span class="toc-text">更改镜像站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%BF%85%E5%A4%87%E8%BD%AF%E4%BB%B6%E5%8C%85"><span class="toc-number">5.2.</span> <span class="toc-text">安装必备软件包</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F"><span class="toc-number">6.</span> <span class="toc-text">配置系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90fstab"><span class="toc-number">6.1.</span> <span class="toc-text">生成fstab</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chroot%E5%88%B0%E6%96%B0%E7%B3%BB%E7%BB%9F"><span class="toc-number">6.2.</span> <span class="toc-text">chroot到新系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%97%B6%E5%8C%BA"><span class="toc-number">6.3.</span> <span class="toc-text">设置时区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96%E8%AE%BE%E7%BD%AE"><span class="toc-number">6.4.</span> <span class="toc-text">区域和本地化设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="toc-number">6.5.</span> <span class="toc-text">网络配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AERoot%E5%AF%86%E7%A0%81"><span class="toc-number">6.6.</span> <span class="toc-text">设置Root密码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%BC%95%E5%AF%BC%E7%A8%8B%E5%BA%8F"><span class="toc-number">7.</span> <span class="toc-text">安装引导程序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE"><span class="toc-number">8.</span> <span class="toc-text">系统配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-number">8.1.</span> <span class="toc-text">创建新用户和用户组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#root%E6%9D%83%E9%99%90"><span class="toc-number">8.2.</span> <span class="toc-text">root权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AUR"><span class="toc-number">8.3.</span> <span class="toc-text">AUR</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#yay"><span class="toc-number">8.3.1.</span> <span class="toc-text">yay</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2"><span class="toc-number">8.4.</span> <span class="toc-text">图形界面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#KDE"><span class="toc-number">8.4.1.</span> <span class="toc-text">KDE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#budgie"><span class="toc-number">8.4.2.</span> <span class="toc-text">budgie</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6"><span class="toc-number">8.5.</span> <span class="toc-text">常用软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-number">8.5.1.</span> <span class="toc-text">浏览器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">8.5.2.</span> <span class="toc-text">文本编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E5%AD%90%E4%B9%A6%E9%98%85%E8%AF%BB%E5%99%A8"><span class="toc-number">8.5.3.</span> <span class="toc-text">电子书阅读器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%8A%E5%A4%A9%E9%80%9A%E8%AE%AF"><span class="toc-number">8.5.4.</span> <span class="toc-text">聊天通讯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E5%A8%B1%E4%B9%90"><span class="toc-number">8.5.5.</span> <span class="toc-text">游戏娱乐</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F"><span class="toc-number">9.</span> <span class="toc-text">结束</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By 关轶</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div><div class="footer_custom_text">关轶的小窝</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="4940256990" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: true,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true 
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
